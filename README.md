@@ -294,9 +294,8 @@ Security is implemented using:
 ---
 
 # 📷 Screenshots
-
 Add screenshots here:
-
+https://github.com/pm-Praveenm/Devops-project-zomato-praveenm/blob/main/Deployment%20of%20Online%20Food%20Ordering%20and%20Delivery%20Application(praveenm).pdf
 ---
 
 # 📚 Learning Outcomes
