@@ -1,319 +1,68 @@
-# 🚀 Zomato Clone – End-to-End DevOps CI/CD Pipeline
+# 🚀 **DevOps Project: ZOMATO Clone App Deployment**
 
-<p align="center">
-  <img src="https://img.shields.io/badge/DevOps-Project-blue?style=for-the-badge&logo=devops" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
-  <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white" />
-  <img src="https://img.shields.io/badge/Terraform-844FBA?style=for-the-badge&logo=terraform&logoColor=white" />
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=FF9900" />
-  <img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" />
-  <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" />
-</p>
+In this **DevOps project**, I demonstrate how to **deploy a ZOMATO Clone App** using a variety of modern DevOps tools and services.
 
----
+## 🛠️ Tools & Services Used:
 
-# 📌 Project Overview
-
-This project demonstrates a **production-style DevOps CI/CD pipeline** for deploying a **Zomato Clone Application** on a Kubernetes cluster using modern DevOps tools and AWS infrastructure.
-
-The project covers the complete software delivery lifecycle—from source code management to automated deployment, security scanning, containerization, orchestration, monitoring, and Infrastructure as Code (IaC).
+1. **GitHub** ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
+2. **Jenkins** ![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=flat-square&logo=jenkins&logoColor=white)
+3. **SonarQube** ![SonarQube](https://img.shields.io/badge/SonarQube-4E9BCD?style=flat-square&logo=sonarqube&logoColor=white)
+4. **Docker** ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+5. **Kubernetes** ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+6. **Prometheus** ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+7. **Grafana** ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white)
+8. **ArgoCD** ![ArgoCD](https://img.shields.io/badge/ArgoCD-EF7B4D?style=flat-square&logo=argo&logoColor=white)
+9. **OWASP** ![OWASP](https://img.shields.io/badge/OWASP-000000?style=flat-square&logo=owasp&logoColor=white)
+10. **Trivy** ![Trivy](https://img.shields.io/badge/Trivy-00979D?style=flat-square&logo=trivy&logoColor=white)
 
 ---
 
-# ✨ Features
+### Project Stages:
 
-- Complete CI/CD Pipeline
-- Docker Containerization
-- Kubernetes Deployment
-- Jenkins Automation
-- Terraform Infrastructure
-- SonarQube Code Quality Analysis
-- Trivy Security Scanning
-- Prometheus Monitoring
-- Grafana Dashboards
-- AWS Cloud Deployment
-- GitOps Ready
-- Production-style Architecture
+1. **Stage 1** - Deployment of App to Docker Container
+2. **Stage 2** - Deployment of App to K8S Cluster with Monitoring
 
 ---
 
-# 🛠 Tech Stack
+### 📂 GitHub Repo Link:  
+[**ZOMATO Clone DevOps Project**](#)
 
-| Category | Technologies |
-|-----------|--------------|
-| Cloud | AWS EC2 |
-| SCM | Git, GitHub |
-| CI/CD | Jenkins |
-| Containerization | Docker |
-| Orchestration | Kubernetes |
-| IaC | Terraform |
-| Quality Analysis | SonarQube |
-| Security | Trivy |
-| Monitoring | Prometheus |
-| Visualization | Grafana |
-| Web Server | Nginx |
-| OS | Ubuntu Linux |
+### 📹 DevOps Project Video Link:  
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://youtu.be/GyoI6-I68aQ)
+
+### 📺 Docker Playlist Video Link:  
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://www.youtube.com/playlist?list=PLs-PsDpuAuTeNx3OgGQ1QrpNBo-XE6VBh)
 
 ---
 
-# 📂 Project Structure
+## 📂 Other DevOps Projects
 
-```
-.
-├── Dockerfile
-├── Jenkinsfile
-├── deployment.yaml
-├── service.yaml
-├── terraform/
-├── kubernetes/
-├── monitoring/
-├── src/
-├── assets/
-└── README.md
-```
+### 🟠 **SWIGGY App Project**:  
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://youtu.be/x55z7rk0NAU)
+
+### 🔵 **SonarQube Video Link**:  
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=sonarqube&logoColor=white)](https://youtu.be/ScdedztTaAU)
+
+### 🟡 **Nexus Video Link**:  
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=nexus&logoColor=white)](https://youtu.be/opJAfDOCZuI)
 
 ---
 
-# ⚙️ DevOps Workflow
+## Connect with me on LinkedIn:  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kastro-kiran/)
 
-```
-Developer
-      │
-      ▼
- GitHub Repository
-      │
-      ▼
- Jenkins Pipeline
-      │
-      ├──────────────► SonarQube Scan
-      │
-      ├──────────────► Trivy Scan
-      │
-      ▼
- Docker Build
-      │
-      ▼
- Docker Image
-      │
-      ▼
- Kubernetes Cluster
-      │
-      ▼
- Zomato Application
-      │
-      ▼
- Prometheus
-      │
-      ▼
- Grafana Dashboard
-```
+## Join the WhatsApp Group for DevOps technical discussions!
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/EGw6ZlwUHZc82cA0vXFnwm) 
 
 ---
 
-# 🏗 Architecture
+### Feedback Request:  
 
-```text
-                +----------------+
-                |     GitHub     |
-                +--------+-------+
-                         |
-                         |
-                  Webhook Trigger
-                         |
-                +--------▼-------+
-                |    Jenkins     |
-                +--------+-------+
-                         |
-      +------------------+------------------+
-      |                                     |
-SonarQube Analysis                   Trivy Scan
-      |                                     |
-      +------------------+------------------+
-                         |
-                    Docker Build
-                         |
-                    Docker Image
-                         |
-                  Kubernetes Cluster
-                         |
-                Zomato Clone Application
-                         |
-              +----------+-----------+
-              |                      |
-        Prometheus              Grafana
-```
+After deploying the app, please share your opinion on LinkedIn along with the Project link and tag me on LinkedIn. Help the video reach wider DevOps enthusiasts.
 
 ---
 
-# 🚀 CI/CD Pipeline
+## Happy learning!  
+<img src="https://media.licdn.com/dms/image/v2/D5603AQHJB_lF1d9OSw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718971147172?e=1735776000&v=beta&t=HC_e0eOufPvf8XQ0P7iI9GDm9hBSIh5FwQaGsL_8ivo" alt="Kastro Profile Image" width="100" height="100" style="border-radius:50%;">
 
-### Stage 1
-
-- Pull Source Code
-
-### Stage 2
-
-- Build Application
-
-### Stage 3
-
-- SonarQube Code Analysis
-
-### Stage 4
-
-- Security Scan using Trivy
-
-### Stage 5
-
-- Docker Image Build
-
-### Stage 6
-
-- Push Image
-
-### Stage 7
-
-- Deploy to Kubernetes
-
-### Stage 8
-
-- Verify Deployment
-
-### Stage 9
-
-- Monitor using Prometheus & Grafana
-
----
-
-# ☁ AWS Infrastructure
-
-The infrastructure is provisioned using **Terraform**.
-
-Resources include:
-
-- EC2 Instance
-- Security Groups
-- IAM Roles
-- VPC
-- Internet Gateway
-- Route Tables
-- Kubernetes Worker Node
-
----
-
-# 🐳 Docker
-
-Build Image
-
-```bash
-docker build -t zomato-clone .
-```
-
-Run Container
-
-```bash
-docker run -d -p 80:80 zomato-clone
-```
-
----
-
-# ☸ Kubernetes
-
-Deploy Application
-
-```bash
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
-```
-
-Check Pods
-
-```bash
-kubectl get pods
-```
-
-Check Services
-
-```bash
-kubectl get svc
-```
-
----
-
-# 📊 Monitoring
-
-Prometheus collects metrics from:
-
-- Kubernetes Cluster
-- Nodes
-- Containers
-- Jenkins
-- Docker
-
-Grafana provides dashboards for:
-
-- CPU Usage
-- Memory Usage
-- Network
-- Pod Status
-- Cluster Health
-
----
-
-# 🔐 Security
-
-Security is implemented using:
-
-- SonarQube
-- Trivy
-- Docker Best Practices
-- Kubernetes RBAC
-- IAM Policies
-
----
-
-# 📈 Project Highlights
-
-✅ Infrastructure as Code
-
-✅ Continuous Integration
-
-✅ Continuous Deployment
-
-✅ Containerization
-
-✅ Kubernetes Orchestration
-
-✅ DevSecOps
-
-✅ Monitoring & Alerting
-
-✅ Production-ready Workflow
-
----
-
-# 📷 Screenshots
-Add screenshots here:
-https://github.com/pm-Praveenm/Devops-project-zomato-praveenm/blob/main/Deployment%20of%20Online%20Food%20Ordering%20and%20Delivery%20Application(praveenm).pdf
----
-
-# 📚 Learning Outcomes
-
-- Docker Fundamentals
-- Kubernetes Deployments
-- Jenkins Pipelines
-- Infrastructure as Code
-- AWS Cloud
-- DevSecOps
-- Monitoring & Observability
-- CI/CD Automation
-
-
-<p align="center">
-
-### 💙 Happy Learning & Happy DevOps 🚀
-
-Made with ❤️ using Docker • Kubernetes • Jenkins • AWS • Terraform
-
-</p>
+KASTRO KIRAN V
