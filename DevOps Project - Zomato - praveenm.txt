@@ -1,7 +1,7 @@
-DevOps Project - Dr. Kastro Kiran
+DevOps Project - Praveen Mandre
 Deployment of ZOMATO Project
 --------------------------------------------
-Repo URL: https://github.com/KastroVKiran/DevOps-Project-Zomato-Kastro.git
+Repo URL: https://github.com/pm-Praveenm/Devops-project-zomato-praveenm
 
 
 1. Launch an Instance (Ubuntu, 24.04, t2.large, 30 GB)
@@ -80,34 +80,33 @@ Make sure to Login to DockerHub account in browser
 $ docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
 $ docker ps (You can see SonarQube container)
 
-<Follow the process as explained in the video>
+
 
 10. Installation of Plugins in Jenkins
 Install below plugins:
-<Follow the process as explained in the video>
 
 11. SonarQube configuration in Jenkins
-<Follow the process as explained in the video>
+
 
 11.1. Tools Configuration in Jenkins
-<Follow the process as explained in the video>
+
 
 11.2. Configuration of SonarQube Token in Jenkins
-<Follow the process as explained in the video>
+
 
 Lets create another credentials for DockerHub. This is being done because, as soon as the docker image is created, it should get pushed to dockerhub. 
-<Follow the process as explained in the video>
+
 
 11.3 Configuration of Email notification in Jenkins
 As soon as the build happens, i need to get an email notification to do that we have to configure our email.
-<Follow the process as explained in the video>
+
 
 
 12. System Configuration in Jenkins
-<Follow the process as explained in the video>
+
 
 13. Create webhook in SonarQube
-<Follow the process as explained in the video>
+
 
 14. Create Pipeline Job
 Before pasting the pipeline script, do the following changes in the script
@@ -134,7 +133,7 @@ pipeline {
         }
         stage ("Git Checkout") {
             steps {
-                git 'https://github.com/KastroVKiran/Zomato-Project-Kastro.git'
+                git 'https://github.com/pm-Praveenm/Devops-project-zomato-praveenm'
             }
         }
         stage("Sonarqube Analysis"){
@@ -177,8 +176,8 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker') {
-                        sh "docker tag zomato kastrov/zomato:latest "
-                        sh "docker push kastrov/zomato:latest "
+                        sh "docker tag zomato praveenm/zomato:latest "
+                        sh "docker push praveenm/zomato:latest "
                     }
                 }
             }
@@ -187,16 +186,16 @@ pipeline {
             steps {
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
-                       sh 'docker-scout quickview kastrov/zomato:latest'
-                       sh 'docker-scout cves kastrov/zomato:latest'
-                       sh 'docker-scout recommendations kastrov/zomato:latest'
+                       sh 'docker-scout quickview praveenm/zomato:latest'
+                       sh 'docker-scout cves praveenm/zomato:latest'
+                       sh 'docker-scout recommendations praveenm/zomato:latest'
                    }
                 }
             }
         }
         stage ("Deploy to Container") {
             steps {
-                sh 'docker run -d --name zomato -p 3000:3000 kastrov/zomato:latest'
+                sh 'docker run -d --name zomato -p 3000:3000 praveenm/zomato:latest'
             }
         }
     }
@@ -219,7 +218,7 @@ pipeline {
                 </body>
                 </html>
             """,
-            to: 'kastrokiran@gmail.com',
+            to: 'praveena.m.mandre@gmail.com',
             mimeType: 'text/html',
             attachmentsPattern: 'trivy.txt'
         }
@@ -474,8 +473,8 @@ Note 2: Run the VS Code Editor/Power Shell/Command Prompt as Administrator, to a
 
 Open vs code editor and execute the below commands; 
 Step 01: Create EKS Cluster using eksctl
-# Create Cluster. I will keep the cluster name as "kastrocluster"
-eksctl create cluster --name=kastrocluster \
+# Create Cluster. I will keep the cluster name as "praveenmcluster"
+eksctl create cluster --name=praveenmcluster \
                       --region=ap-northeast-1 \
                       --zones=ap-northeast-1a,ap-northeast-1c \
                       --without-nodegroup                  
@@ -484,14 +483,14 @@ If you see any error while executing the above commands in VS Code Editor, it is
 
 To resolve this issue, you can either write the entire command on a single line or use a different method for line continuation. Here are the two approaches:
 
-Approach 1: Single Line Command (In this video i will prefer this)
+Approach 1: Single Line Command 
 Simply run the entire command in one line without using backslashes for line continuation:
-eksctl create cluster --name=kastrocluster --region=ap-northeast-1 --zones=ap-northeast-1a,ap-northeast-1c --without-nodegroup
+eksctl create cluster --name=praveenmcluster --region=ap-northeast-1 --zones=ap-northeast-1a,ap-northeast-1c --without-nodegroup
 
 
 Approach 2: Use PowerShell’s Backtick for Line Continuation
 If you want to split the command across multiple lines, you can use the backtick character (`) in PowerShell for line continuation:
-eksctl create cluster --name=kastrocluster `
+eksctl create cluster --name=praveenmcluster `
                       --region=ap-northeast-1 `
                       --zones=ap-northeast-1a,ap-northeast-1c `
                       --without-nodegroup
@@ -500,8 +499,8 @@ Note: Make sure there is no space after the backtick.
 
 It will take atleast 20-25 minutes for the cluster to create.
 
-To verify the cluster creation ---> Goto Cloud Formation service in AWS ----> You should see a stack got created with the name "kastrocluster". Make sure in the vs code editor the cluster will get created. As said earlier it will take atleast 20 minutes.
-Once the cluster is ready, you will see "EKS Cluster "kastrocluster" in "us-east-1" region is ready" in vs code editor. wait till you see this.
+To verify the cluster creation ---> Goto Cloud Formation service in AWS ----> You should see a stack got created with the name "praveenmcluster". Make sure in the vs code editor the cluster will get created. As said earlier it will take atleast 20 minutes.
+Once the cluster is ready, you will see "EKS Cluster "praveenmcluster" in "us-east-1" region is ready" in vs code editor. wait till you see this.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Get List of clusters
 eksctl get cluster
@@ -521,32 +520,32 @@ eksctl utils associate-iam-oidc-provider \
 # Replace with region & cluster name
 eksctl utils associate-iam-oidc-provider \
     --region ap-northeast-1 \
-    --cluster kastrocluster \
+    --cluster praveenmcluster \
     --approve
 
 (OR)
-eksctl utils associate-iam-oidc-provider --region ap-northeast-1 --cluster kastrocluster --approve
+eksctl utils associate-iam-oidc-provider --region ap-northeast-1 --cluster praveenmcluster --approve
 
 (OR)
 eksctl utils associate-iam-oidc-provider `
     --region uap-northeast-1 `
-    --cluster kastrocluster `
+    --cluster praveenmcluster `
     --approve
 
 Step 03: Create Node Group with additional Add-Ons in Public Subnets
 These add-ons will create the respective IAM policies for us automatically within our Node Group role.
 
 # Create Public Node Group   
-eksctl create nodegroup --cluster=kastrocluster \
+eksctl create nodegroup --cluster=praveenmcluster \
                        --region=ap-northeast-1 \
-                       --name=kastrodemo-ng-public1 \
+                       --name=praveenmdemo-ng-public1 \
                        --node-type=t3.medium \
                        --nodes=2 \
                        --nodes-min=2 \
                        --nodes-max=4 \
                        --node-volume-size=20 \
                        --ssh-access \
-                       --ssh-public-key=Prajwal \
+                       --ssh-public-key=praveenm \
                        --managed \
                        --asg-access \
                        --external-dns-access \
@@ -555,19 +554,19 @@ eksctl create nodegroup --cluster=kastrocluster \
                        --alb-ingress-access
 
 (OR)
-eksctl create nodegroup --cluster=kastrocluster --region=ap-northeast-1 --name=kastrodemo-ng-public1 --node-type=t3.medium --nodes=2 --nodes-min=2 --nodes-max=4 --node-volume-size=20 --ssh-access --ssh-public-key=Prajwal --managed --asg-access --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
+eksctl create nodegroup --cluster=praveenmcluster --region=ap-northeast-1 --name=kastrodemo-ng-public1 --node-type=t3.medium --nodes=2 --nodes-min=2 --nodes-max=4 --node-volume-size=20 --ssh-access --ssh-public-key=praveenm --managed --asg-access --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
 
 (OR)
-eksctl create nodegroup --cluster=kastrocluster `
+eksctl create nodegroup --cluster=praveenmcluster `
     --region=ap-northeast-1 `
-    --name=kastrodemo-ng-public1 `
+    --name=praveenmdemo-ng-public1 `
     --node-type=t3.medium `
     --nodes=2 `
     --nodes-min=2 `
     --nodes-max=4 `
     --node-volume-size=20 `
     --ssh-access `
-    --ssh-public-key=Prajwal `
+    --ssh-public-key=praveenm `
     --managed `
     --asg-access `
     --external-dns-access `
@@ -587,21 +586,19 @@ eksctl get clusters
 
 # Capture Node Group name
 eksctl get nodegroup --cluster=<clusterName>
-eksctl get nodegroup --cluster=kastrocluster
+eksctl get nodegroup --cluster=praveenmcluster
 
 # Delete Node Group
 eksctl delete nodegroup --cluster=<clusterName> --name=<nodegroupName>
-eksctl delete nodegroup --cluster=kastrocluster --name=kastrodemo-ng-public1
+eksctl delete nodegroup --cluster=praveenmcluster --name=praveenmdemo-ng-public1
 
 Step 07: Delete Cluster
 # Delete Cluster
 eksctl delete cluster <clusterName>
-eksctl delete cluster kastrocluster
+eksctl delete cluster praveenmcluster
 ********************************************************************************
 ********************************************************************************
 Let us deploy the same application in the EKS cluster also
-
-<Follow the process as explained in the video>
 
 ------------------------------------------------------------
 15.6: Argo CD installation
@@ -707,12 +704,6 @@ Copy the public ip of "nodeIP" which we have done exactly 4 steps above this lin
 Note: If you see error in Prometheus under "k8s", open port number 9100 for the EC2 instances which were created as part of EKS cluster i.e nodes
 
 After everything is done. Delete everything. Make sure to delete the Cloud Formation Stacks.
-
-========================================================================================================
-Kind Request:
-Once after you have successfully deployed the App, kindly share your experience on LinkedIn by Tagging me and also provide the YouTube link of this project in your post, as it helps others to access the video quickly. 
-========================================================================================================
-												HAPPY LEARNING
 
 
 
